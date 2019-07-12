@@ -5,8 +5,8 @@ export class AzureSwapSlotPlugin extends AzureBasePlugin {
   public hooks: { [eventName: string]: Promise<any> };
   public commands: any;
 
-  public constructor(serverless: Serverless, private options: Serverless.Options) {
-    super(serverless);
+  public constructor(serverless: Serverless, options: Serverless.Options) {
+    super(serverless, options);
 
     this.hooks = {
       "swap:swap": this.swap.bind(this),
